@@ -45,16 +45,15 @@ local ocorner_cbox = {
 	}
 }
 local wood_slopes = {   --Material , Description , Image , Item
-	{ "wood" , "Wood" , "", ""},
-	{ "pinewood" , "Pinewood" , "", ""},	
-	{ "junglewood" , "Junglewood" , "", ""},
+	{ "wood" , "Wood" , "default:wood"},
+	{ "pinewood" , "Pinewood" , "default:pinewood"},	
+	{ "junglewood" , "Junglewood" , "default:junglewood"},
 }
 
 for i in ipairs(wood_slopes) do
 	local mat = wood_slopes[i][1]
 	local desc = wood_slopes[i][2]
-	local img = wood_slopes[i][3]
-	local item = wood_slopes[i][4]
+	local item = wood_slopes[i][3]
 
 --slope
 minetest.register_node("mywoodslopes:"..mat.."_slope", {
@@ -170,6 +169,82 @@ minetest.register_node("mywoodslopes:"..mat.."_ocorner_r", {
 	on_place = minetest.rotate_node,
 	collision_box = ocorner_cbox,
 	selection_box = ocorner_cbox
+})
+--Crafts--------------------------------------------------------
+
+--slope
+minetest.register_craft({
+	output = "mywoodslopes:"..mat.."_slope 3",
+	recipe = {
+		{"", "",""},
+		{item, "",""},
+		{item, item,""},
+	}
+})
+--slope long
+minetest.register_craft({
+	output = "mywoodslopes:"..mat.."_slope_long 3",
+	recipe = {
+		{"", "",""},
+		{item, "",""},
+		{item, item,item},
+	}
+})
+--slope icorner
+minetest.register_craft({
+	output = "mywoodslopes:"..mat.."_icorner 3",
+	recipe = {
+		{"", "",""},
+		{"", item,""},
+		{item,"", item},
+	}
+})
+--slope ocorner
+minetest.register_craft({
+	output = "mywoodslopes:"..mat.."_ocorner 3",
+	recipe = {
+		{"", "",""},
+		{item, "",item},
+		{"", item,""},
+	}
+})
+
+--rotated-----------------------------------------------
+--slope
+minetest.register_craft({
+	output = "mywoodslopes:"..mat.."_slope_r 3",
+	recipe = {
+		{"", "",""},
+		{"", "mywoodslopes:"..mat.."_slope",""},
+		{"", "",""},
+	}
+})
+--slope long
+minetest.register_craft({
+	output = "mywoodslopes:"..mat.."_slope_long_r 3",
+	recipe = {
+		{"", "",""},
+		{"", "mywoodslopes:"..mat.."_slope_long",""},
+		{"", "",""},
+	}
+})
+--slope icorner
+minetest.register_craft({
+	output = "mywoodslopes:"..mat.."_icorner_r 3",
+	recipe = {
+		{"", "",""},
+		{"", "mywoodslopes:"..mat.."_icorner",""},
+		{"", "",""},
+	}
+})
+--slope ocorner
+minetest.register_craft({
+	output = "mywoodslopes:"..mat.."_ocorner_r 3",
+	recipe = {
+		{"", "",""},
+		{"", "mywoodslopes:"..mat.."_ocorner",""},
+		{"", "",""},
+	}
 })
 end
 
