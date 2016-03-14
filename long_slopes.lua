@@ -1,14 +1,14 @@
 local slope_cbox_long = {
 	type = "fixed",
 	fixed = {
-		{-0.5, -0.5,   -1.5,  0.5, -0.375, 0.5},  --  NodeBox1
-		{-0.5, -0.375, -1.25, 0.5, -0.25,  0.5},  --  NodeBox2
-		{-0.5, -0.25,  -1,    0.5, -0.125, 0.5},  --  NodeBox3
-		{-0.5, -0.125, -0.75, 0.5,  0,     0.5},  --  NodeBox4
-		{-0.5,  0,     -0.5,  0.5,  0.125, 0.5},  --  NodeBox5
-		{-0.5,  0.125, -0.25, 0.5,  0.25,  0.5},  --  NodeBox6
-		{-0.5,  0.25,   0,    0.5,  0.375, 0.5},  --  NodeBox7
-		{-0.5,  0.375,  0.25, 0.5,  0.5,   0.5},  --  NodeBox8
+		{-0.5, -0.5,   -1.5,  0.5, -0.375, 0.5},
+		{-0.5, -0.375, -1.25, 0.5, -0.25,  0.5},
+		{-0.5, -0.25,  -1,    0.5, -0.125, 0.5},
+		{-0.5, -0.125, -0.75, 0.5,  0,     0.5},
+		{-0.5,  0,     -0.5,  0.5,  0.125, 0.5},
+		{-0.5,  0.125, -0.25, 0.5,  0.25,  0.5},
+		{-0.5,  0.25,   0,    0.5,  0.375, 0.5},
+		{-0.5,  0.375,  0.25, 0.5,  0.5,   0.5},
 	}
 }
 
@@ -49,8 +49,10 @@ local ocorner_cbox_long = {
 
 local wood_long_slopes = {   --Material , Description , Image , Item
 	{ "wood" , "Wood" , "default:wood"},
-	{ "pinewood" , "Pinewood" , "default:pinewood"},	
+	{ "pine_wood" , "Pinewood" , "default:pine_wood"},	
 	{ "junglewood" , "Junglewood" , "default:junglewood"},
+	{ "acacia_wood" , "Acacia wood" , "default:acacia_wood"},
+	{ "aspen_wood" , "Aspen wood" , "default:aspen_wood"},
 }
 
 for i in ipairs(wood_long_slopes) do
@@ -63,7 +65,6 @@ minetest.register_node("mywoodslopes:"..mat.."_slope_long", {
 	description = desc.." Slope Long",
 	drawtype = "mesh",
 	mesh = "six-twelve_slope.obj",
---	tiles = {"mywoodslopes_"..mat.."_mesh.png"},
 	tiles = {"default_"..mat..".png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -79,7 +80,6 @@ minetest.register_node("mywoodslopes:"..mat.."_long_icorner", {
 	description = desc.." Long Slope Inside Corner",
 	drawtype = "mesh",
 	mesh = "six-twelve_slope-ic.obj",
---	tiles = {"mywoodslopes_"..mat.."_mesh.png"},
 	tiles = {"default_"..mat..".png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -95,7 +95,6 @@ minetest.register_node("mywoodslopes:"..mat.."_long_ocorner", {
 	description = desc.." Long Slope Outside Corner",
 	drawtype = "mesh",
 	mesh = "six-twelve_slope-oc.obj",
---	tiles = {"mywoodslopes_"..mat.."_mesh.png"},
 	tiles = {"default_"..mat..".png"},
 	paramtype = "light",
 	paramtype2 = "facedir",

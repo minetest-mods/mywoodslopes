@@ -7,3 +7,7 @@ if minetest.get_modpath("moretrees") then
 		return
 	end
 
+if minetest.get_modpath("ethereal") then
+	dofile(minetest.get_modpath("mywoodslopes").."/ethereal.lua")
+		return
+	end
