@@ -38,6 +38,8 @@ local moretrees_slopes = {   --Material , Description , Item, Image
 	{"palm",	 "Palm Wood",    		 "ethereal:palm_wood",        "moretrees_palm"},
 	{"banana",	 "Banana Wood",    		 "ethereal:banana_wood",      "ethereal_banana"},
 	{"birch",	 "Birch Wood",    		 "ethereal:birch_wood",       "moretrees_birch"},
+	{"cedar",	 "Cedar Tree Plank",     "moretrees:cedar_planks",      "cedar"},
+	{"poplar",   "Poplar Tree Planks",   "moretrees:poplar_planks",     "poplar"},
 }
 
 for i in ipairs(moretrees_slopes) do
